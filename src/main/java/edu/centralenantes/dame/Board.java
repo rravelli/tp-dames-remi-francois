@@ -21,10 +21,10 @@ public class Board {
                 }
             }
         }
-        for (int y=9; 5 <= y; y--) {
+        for (int y=9; 6 <= y; y--) {
             for (int x=0; x < 10; x++) {
                 if ((x + y) % 2 == 0) {
-                    plateau[x][y] = new Pion(x,y,0);
+                    plateau[x][y] = new Pion(x,y,1);
                 }
             }
         }
@@ -43,6 +43,7 @@ public class Board {
                     s += "-";
                 }
             }
+            s += "\n";
         }
         return s;
     }
