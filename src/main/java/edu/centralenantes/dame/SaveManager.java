@@ -53,9 +53,10 @@ public abstract class SaveManager {
         b.setTurn(Integer.valueOf(line.substring(5, 6)));
         String data[];
         Pion[][] p = b.getPlateau();
+        line = reader.readLine();
         while (line != null){
             
-            line = reader.readLine();
+            
             data = line.split(SEP);
             switch (data[0]){
                 case "Pion":
@@ -65,7 +66,7 @@ public abstract class SaveManager {
                     p[Integer.valueOf(data[1])][Integer.valueOf(data[2])] = new Dame(Integer.valueOf(data[1]), Integer.valueOf(data[2]), Integer.valueOf(data[3]));
                     break;
             }
-            
+            line = reader.readLine();
         }
         return b;
     }

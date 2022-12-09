@@ -5,6 +5,8 @@
 
 package edu.centralenantes.dame;
 
+import java.io.IOException;
+
 /**
  *
  * @author inky19

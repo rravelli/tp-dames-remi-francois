@@ -93,6 +93,14 @@ public class Board {
     public int getTurn() {
         return turn;
     }
+
+    public void setPlateau(Pion[][] plateau) {
+        this.plateau = plateau;
+    }
+
+    public void setTurn(int turn) {
+        this.turn = turn;
+    }
     
     
     
