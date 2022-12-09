@@ -39,5 +39,9 @@ public class Point {
         this.y = y;
     }
     
+    public String toString(){
+        return String.valueOf(x) + SaveManager.SEP + String.valueOf(y);
+    }
+    
     
 }
