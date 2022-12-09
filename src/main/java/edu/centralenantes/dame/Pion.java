@@ -7,9 +7,15 @@ package edu.centralenantes.dame;
 public class Pion {
     
     private Point pos;
+    private int player;
     
     public Pion(){
         pos = new Point();
+    }
+    
+    public Pion(int x, int y, int player) {
+        pos = new Point(x, y);
+        this.player = player; 
     }
     
     public void setPos(int x, int y){
@@ -19,5 +25,9 @@ public class Pion {
     
     public Point getPos(){
         return pos;
+    }
+    
+    public int getPlayer() {
+        return player;
     }
 }
