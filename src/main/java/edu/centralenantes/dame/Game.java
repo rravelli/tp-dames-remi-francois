@@ -12,8 +12,8 @@ package edu.centralenantes.dame;
 public class Game {
 
     public static void main(String[] args) {
-        int size = 10;
-        int[][] board = new int[size][size];
+        Board b = new Board();
+        System.out.println(b);
         
         
     }
