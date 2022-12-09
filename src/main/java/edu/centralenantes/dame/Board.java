@@ -85,6 +85,14 @@ public class Board {
         }
         return s;
     }
+
+    public Pion[][] getPlateau() {
+        return plateau;
+    }
+
+    public int getTurn() {
+        return turn;
+    }
     
     
     
