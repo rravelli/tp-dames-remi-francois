@@ -5,16 +5,19 @@
 
 package edu.centralenantes.dame;
 
+import java.io.IOException;
+
 /**
  *
  * @author inky19
  */
 public class Game {
 
-    public static void main(String[] args) {
-        Board b = new Board();
-        System.out.println(b);
+    public static void main(String[] args) throws IOException {
+        Board b = SaveManager.load();
         
+        //SaveManager.save(b);
+        System.out.println(b);
         
     }
 }
