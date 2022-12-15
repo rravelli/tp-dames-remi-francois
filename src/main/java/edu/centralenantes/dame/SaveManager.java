@@ -60,10 +60,10 @@ public abstract class SaveManager {
             data = line.split(SEP);
             switch (data[0]){
                 case "Pion":
-                    p[Integer.valueOf(data[1])][Integer.valueOf(data[2])] = new Pion(Integer.valueOf(data[1]), Integer.valueOf(data[2]), Integer.valueOf(data[3]));
+                    p[Integer.valueOf(data[1])][Integer.valueOf(data[2])] = new Pion(Integer.valueOf(data[1]), Integer.valueOf(data[2]), Integer.valueOf(data[3]), p);
                     break;
                 case "Dame":
-                    p[Integer.valueOf(data[1])][Integer.valueOf(data[2])] = new Dame(Integer.valueOf(data[1]), Integer.valueOf(data[2]), Integer.valueOf(data[3]));
+                    p[Integer.valueOf(data[1])][Integer.valueOf(data[2])] = new Dame(Integer.valueOf(data[1]), Integer.valueOf(data[2]), Integer.valueOf(data[3]), p);
                     break;
             }
             line = reader.readLine();

@@ -6,8 +6,8 @@ package edu.centralenantes.dame;
  */
 public class Dame extends Pion {
 
-    Dame(int x, int y, int player) {
-        super(x, y, player);
+    Dame(int x, int y, int player, Pion[][] plateau) {
+        super(x, y, player, plateau);
     }
     
 }

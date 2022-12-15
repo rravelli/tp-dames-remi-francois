@@ -39,6 +39,14 @@ public class Point {
         this.y = y;
     }
     
+    /**
+     * Vérifie que le point se situe bien dans le plateau.
+     * @return Si le point est valide.
+     */
+    public boolean isValid(){
+        return ((Math.abs(x-5) >= 5) && (Math.abs(y-5) >= 5));
+    }
+    
     public String toString(){
         return String.valueOf(x) + SaveManager.SEP + String.valueOf(y);
     }
