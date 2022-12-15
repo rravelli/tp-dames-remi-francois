@@ -13,9 +13,13 @@ import java.io.IOException;
  */
 public class Game {
 
-    public static void main(String[] args) {
-        Board b = new Board();
-        b.nextTurn();
+    public static void main(String[] args) throws IOException {
+        Board b = SaveManager.load();
+        b.plateau[3][9] = null;
+        while(true){
+            b.nextTurn();
+        }
+        
         
     }
 }
