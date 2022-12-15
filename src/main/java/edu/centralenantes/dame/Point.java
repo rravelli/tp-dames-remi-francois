@@ -44,7 +44,7 @@ public class Point {
      * @return Si le point est valide.
      */
     public boolean isValid(){
-        return ((Math.abs(x-5) >= 5) && (Math.abs(y-5) >= 5));
+        return ((Math.abs(x-4.5) <= 4.5) && (Math.abs(y-4.5) <= 4.5));
     }
     
     public String toString(){
