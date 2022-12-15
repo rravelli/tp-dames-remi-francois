@@ -36,11 +36,12 @@ public class Board {
     }
     
     public void nextTurn() {
-        System.err.println("C'est au tour du joueur "+turn);
+        System.out.println(this);
+        System.out.println("C'est au tour du joueur "+turn);
         Point pos = null;
         s = new Scanner(System.in);
         while (pos == null) {
-            System.err.println("Sélectionner un pion de la fome : x[ESPACE]y ");
+            System.out.println("Sélectionner un pion de la fome : x[ESPACE]y ");
             String posString = s.nextLine();
             try {
                 String[] positions = posString.split(" ");
@@ -50,13 +51,27 @@ public class Board {
                 if (plateau[pos.getX()][pos.getY()] == null || plateau[pos.getX()][pos.getY()].getPlayer() != turn) {
                     pos=null;
                 }
-            }
-            
+            }  
         }
 
-        System.out.println("Pion "+pos+" sélectionné");
+        System.out.println("Pion "+pos+" sélectionné\n");
         Pion pion = plateau[pos.getX()][pos.getY()];
         
+        
+        
+        pos = null;
+        while (pos == null) {
+            System.out.println("Choisir direction, gauche [g] ou droite [d]");
+            String posString = s.nextLine();
+            if (posString.equals("g")) {
+                pos = new Point(-1,1 - pion.getPlayer()*2);
+            } else if (posString.equals("d")) {
+                pos = new Point(1,1 - pion.getPlayer()*2);
+            }
+            if (pion != null && !pion.move(pos)) {
+                pos = null;
+            }
+        }
         
         
         turn = 1 - turn;
@@ -66,26 +81,35 @@ public class Board {
     
     @Override
     public String toString() {
-        String s = "  ";
+        String s = "  |";
         for (int i=0; i < 10; i++) {
-            s+= i + " ";
+            s+= i + "  ";
+        }
+        s+= "\n--";
+        for (int i=0; i < 10; i++) {
+            s+= "---";
         }
         s+= "\n";
         for (int y=0; y < 10; y++) {
-            s+= y + " ";
+            s+= y + " |";
             for (int x=0; x < 10; x++) {
                 
                 if (plateau[x][y] != null) {
-                    s += plateau[x][y].getPlayer() + " ";
+                    if (plateau[x][y] instanceof Dame) {
+                        s += "D" + plateau[x][y].getPlayer() + " ";
+                    } else {
+                        s += "P" + plateau[x][y].getPlayer() + " ";
+                    }
+                    
                 } else {
-                    s += "- ";
+                    s += "-- ";
                 }
             }
             s += "\n";
         }
         return s;
     }
-
+    
     public Pion[][] getPlateau() {
         return plateau;
     }
