@@ -39,9 +39,8 @@ public class Point {
         this.y = y;
     }
     
-    @Override
-    public String toString() {
-        return "("+x+","+y+")";
+    public String toString(){
+        return String.valueOf(x) + SaveManager.SEP + String.valueOf(y);
     }
     
     
