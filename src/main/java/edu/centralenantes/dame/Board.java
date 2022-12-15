@@ -53,9 +53,9 @@ public class Board {
             }
             
         }
-        
-        
+
         System.out.println("Pion "+pos+" sélectionné");
+        Pion pion = plateau[pos.getX()][pos.getY()];
         
         
         
