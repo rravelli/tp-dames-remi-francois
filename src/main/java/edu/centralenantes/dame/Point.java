@@ -42,6 +42,25 @@ public class Point {
     public String toString(){
         return String.valueOf(x) + SaveManager.SEP + String.valueOf(y);
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Point other = (Point) obj;
+        if (this.x != other.x) {
+            return false;
+        }
+        return this.y == other.y;
+    }
+    
     
     
 }
