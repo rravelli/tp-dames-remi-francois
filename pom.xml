@@ -36,4 +36,8 @@
         <sonar.organization>mycmac</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
+    <properties>
+      <sonar.organization>rravelli</sonar.organization>
+      <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    </properties>
 </project>
